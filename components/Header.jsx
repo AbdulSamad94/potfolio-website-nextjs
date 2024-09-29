@@ -27,7 +27,7 @@ const Header = () => {
           : "dark:bg-transparent  py-6"
       } ${pathname === "/" && "bg-[#fef9f5]"}`}
     >
-      <div className="container mx-10">
+      <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <Logo />
           <div className="flex items-center gap-x-6">

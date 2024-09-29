@@ -11,7 +11,7 @@ import Badge from "./Badge";
 
 const HeroSection = () => {
   return (
-    <section className="py-12 mx-10 lg:py-14 h-[120vh] xl-pt-28 bg-hero-pattern bg-no-repeat bg-bottom  bg-cover dark:bg-none">
+    <section className="py-12 lg:py-14 h-[120vh] xl-pt-28 bg-hero-pattern bg-no-repeat bg-bottom  bg-cover dark:bg-none">
       <div className="container mx-auto">
         <div className="flex justify-between gap-x-8">
           <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center items xl:text-left">
