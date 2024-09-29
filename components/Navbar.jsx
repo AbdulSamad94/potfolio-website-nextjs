@@ -8,7 +8,12 @@ const links = [
   { path: "/contact", name: "Contact" },
 ];
 
-const Navbar = ({ containerStyles, linkStyles, UnderlineStyles, forClosing }) => {
+const Navbar = ({
+  containerStyles,
+  linkStyles,
+  UnderlineStyles,
+  forClosing,
+}) => {
   const pathname = usePathname();
   return (
     <nav className={containerStyles}>

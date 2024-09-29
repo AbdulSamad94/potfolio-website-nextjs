@@ -15,9 +15,9 @@ const HeroSection = () => {
       <div className="container mx-auto">
         <div className="flex justify-between gap-x-8">
           <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center items xl:text-left">
-            <div className="text-sm uppercase font-semibold mb-4 text-primary tracking-widest">
+            <h1 className="text-sm uppercase font-semibold mb-4 text-primary tracking-widest">
               Front-End Web Developer
-            </div>
+            </h1>
             <h1 className="h1 mb-4">Hello, my name is Abdul Samad</h1>
             <p className="subtitle max-w-[500px] mx-auto xl:mx-0">
               I'm a Front-End Developer specialized in building fast, responsive
@@ -42,14 +42,14 @@ const HeroSection = () => {
           </div>
           <div className="hidden xl:flex relative ">
             <Badge
-              containerStyles="absolute top-[24%] -left-[90px]"
+              containerStyles="absolute top-[10%] right-0"
               icons={<RiBriefcase4Fill />}
               textOfBadge="Years of experience"
               endCountNumber={2}
               sign="+"
             />
             <Badge
-              containerStyles="absolute top-[80%] right-[1rem]"
+              containerStyles="absolute top-[80%] -left-[50px]"
               icons={<RiTodoFill />}
               textOfBadge="Projects Completed"
               endCountNumber={40}
