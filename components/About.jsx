@@ -1,6 +1,6 @@
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
-
+import Image from "next/image";
 import {
   User2,
   MailIcon,
@@ -10,6 +10,11 @@ import {
   Calendar,
   Briefcase,
 } from "lucide-react";
+
+import { FaReact } from "react-icons/fa";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { SiTypescript, SiJavascript } from "react-icons/si";
+import { TbBrandFramerMotion } from "react-icons/tb";
 
 const info = [
   {
@@ -78,10 +83,28 @@ const skillsData = [
     title: "Skills",
     data: [
       {
-        name: "Next JS, React JS, Framer-Motion",
+        name: "Next JS",
+        icon: <RiNextjsFill />,
       },
       {
-        name: "Frontend Development",
+        name: "React JS",
+        icon: <FaReact />,
+      },
+      {
+        name: "Framer Motion",
+        icon: <TbBrandFramerMotion />,
+      },
+      {
+        name: "TailwindCSS",
+        icon: <RiTailwindCssFill />,
+      },
+      {
+        name: "Javascript",
+        icon: <SiJavascript />,
+      },
+      {
+        name: "Typescript",
+        icon: <SiTypescript />,
       },
     ],
   },
@@ -90,12 +113,15 @@ const skillsData = [
     data: [
       {
         ImgPath: "/about/vscode.svg",
+        name: "VS Code Editor",
       },
       {
         ImgPath: "/about/figma.svg",
+        name: "Figma",
       },
       {
         ImgPath: "/about/wordpress.svg",
+        name: "Wordpress",
       },
     ],
   },
@@ -241,6 +267,54 @@ const About = () => {
                 <TabsContent value="Skills">
                   <div className="text-center">
                     <h3 className="h3 mb-8">Tools that i use everyday</h3>
+                    <div className="mb-16">
+                      <h4 className="text-xl font- mb-2">Skills</h4>
+                      <div className="border-b border-border mb-4"></div>
+                      {/* Skills List */}
+                      <div className="grid grid-cols-2 lg:grid-cols-3 mt-10 place-items-start lg:place-items-center gap-4 mx-auto lg:mx-0">
+                        {getData(skillsData, "Skills").data.map(
+                          (item, index) => {
+                            return (
+                              <div
+                                className="flex items-center lg:mx-0 "
+                                key={index}
+                              >
+                                <div className="text-primary mr-5">
+                                  {item.icon}
+                                </div>
+                                <p className="font-medium">{item.name}</p>
+                              </div>
+                            );
+                          }
+                        )}
+                      </div>
+                    </div>
+                    {/* Tools */}
+                    <div className="mt-20">
+                      <h4 className="text-xl font- mb-2">Tools</h4>
+                      <div className="border-b border-border mb-4"></div>
+                      <div className="grid grid-cols-3 place-items-center mt-10 gap-4 mx-auto lg:mx-0">
+                        {getData(skillsData, "Tools").data.map(
+                          (item, index) => {
+                            return (
+                              <div
+                                className="text-center flex flex-col items-center lg:flex-row"
+                                key={index}
+                              >
+                                <Image
+                                  src={item.ImgPath}
+                                  width={50}
+                                  height={50}
+                                  priority
+                                  alt="icons"
+                                />
+                                <p className="font-medium mt-2">{item.name}</p>
+                              </div>
+                            );
+                          }
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </TabsContent>
               </div>
