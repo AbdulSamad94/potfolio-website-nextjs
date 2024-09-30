@@ -127,10 +127,11 @@ const About = () => {
               </TabsList>
               {/* Content */}
               <div className="text-lg mt-12 lg:mt-18 mx-4">
+                {/* Personal Info */}
                 <TabsContent value="Personal-Info">
-                  <div className="flex justify-center flex-col text-center xl:text-left">
-                    <h3 className="h3 mb-4">Personal Info</h3>
-                    <p className="subtitle w-auto mx-auto xl:mx-0">
+                  <div className="flex justify-center items-center flex-col text-center xl:text-left">
+                    <h3 className="h3 mb-4 text-center">Personal Info</h3>
+                    <p className="subtitle w-auto mx-auto xl:mx-0 text-center">
                       I offer front-end development services, specializing in
                       building fast, responsive websites using Next.js, React,
                       and TailwindCSS. From clean code to smooth animations with
@@ -153,21 +154,20 @@ const About = () => {
                     {/* Languages */}
                     <div className="flex flex-col gap-y-2">
                       <p className="text-primary h4">Language Skills</p>
-                      <div className="border-b border-border"></div>
+                      <div className="border-b border-border dark:border-white"></div>
                       <p className="text-base">English, Urdu, Hindi</p>
                     </div>
                   </div>
                 </TabsContent>
+                {/* Qualifivation */}
                 <TabsContent value="Qualifications">
                   <div>
-                    <h3 className="h3 mb-8 text-center lg:text-left">
-                      My Journey
-                    </h3>
+                    <h3 className="h3 mb-8 text-center">My Journey</h3>
                     {/* education & experience */}
                     <div className="flex flex-col justify-between lg:flex-row gap-x-28">
                       {/*1st experiences */}
                       <div className="flex flex-col gap-y-6">
-                        <div className="flex mt-9 gap-x-4 items-center text-primary text-[22px]">
+                        <div className="flex gap-x-4 items-center text-primary text-[22px]">
                           <Briefcase />
                           <h4 className="h4 text-medium capitalize">
                             {getData(qualifications, "Experience").title}
@@ -189,7 +189,7 @@ const About = () => {
                                   <div className="text-lg font-medium leading-none mb-4">
                                     {role}
                                     {" - "}
-                                    <span className="text-base text-muted font-medium">
+                                    <span className="text-base text-muted dark:text-white">
                                       {qualification}
                                     </span>
                                   </div>
@@ -204,7 +204,7 @@ const About = () => {
                       </div>
                       {/*2nd education */}
                       <div className="flex flex-col gap-y-6">
-                        <div className="flex mt-10 gap-x-4 items-center text-primary text-[22px]">
+                        <div className="flex gap-x-4 items-center text-primary text-[22px]">
                           <GraduationCap />
                           <h4 className="h4 text-medium capitalize">
                             {getData(qualifications, "Education").title}
@@ -219,7 +219,7 @@ const About = () => {
                                 <div className="group" key={index}>
                                   <div className="font-semibold text-xl relative leading-none mb-2">
                                     <div className="bg-orange-600  w-[10px] h-[10px] rounded-full absolute left-[-35px] z-10 transition-all duration-500 top-1/2 -translate-y-1/2 group-hover:top-[85px]"></div>
-                                    <div className="h-[75px] w-[2px] bg-slate-300 absolute top-[15px] -left-[31px]"></div>
+                                    <div className="h-[65px] w-[2px] bg-slate-300 absolute top-[15px] -left-[31px]"></div>
                                     {school}
                                   </div>
                                   <div className="text-lg font-medium leading-none mb-4">
@@ -235,10 +235,14 @@ const About = () => {
                         </div>
                       </div>
                     </div>
-                    <div>education</div>
                   </div>
                 </TabsContent>
-                <TabsContent value="Skills">Skills Information</TabsContent>
+                {/* Skills */}
+                <TabsContent value="Skills">
+                  <div className="text-center">
+                    <h3 className="h3 mb-8">Tools that i use everyday</h3>
+                  </div>
+                </TabsContent>
               </div>
             </Tabs>
           </div>
