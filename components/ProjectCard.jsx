@@ -8,10 +8,7 @@ import { Github, Link2Icon } from "lucide-react";
 
 const ProjectCard = ({ project }) => {
   return (
-    <Card
-      onClick={() => window.open(project.link, "_blank")}
-      className="overflow-hidden relative group h-[460px] cursor-pointer"
-    >
+    <Card className="overflow-hidden relative group h-[460px]">
       <CardHeader className="p-0">
         {/* Image */}
         <div className="relative w-full h-[300px] flex justify-center items-center dark:bg-secondary/40 lg:bg-work-project-light lg:dark:bg-work-project-dark lg:bg-center lg:bg-no-repeat overflow-hidden">
@@ -21,7 +18,17 @@ const ProjectCard = ({ project }) => {
             width={250}
             height={250}
             alt="project-image"
+            priority
           />
+          <div className="flex justify-center items-center cursor-pointer">
+            <Link
+              href={project.link}
+              className="bg-secondary w-[40px] h-[40px] rounded-full flex justify-center items-center scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-200"
+              target="_blank"
+            >
+              <Link2Icon className=" text-white" />
+            </Link>
+          </div>
         </div>
       </CardHeader>
       <div className="h-full px-8 py-6">
