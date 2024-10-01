@@ -140,7 +140,7 @@ const About = () => {
         <div className="flex flex-col justify-center items-center lg:flex-row">
           <div className="w-full flex justify-center items-center">
             <Tabs defaultValue="Personal-Info" className="w-[800px] ">
-              <TabsList className=" grid justify-center xl:grid-cols-3 xl:border dark:md:border-none gap-x-14">
+              <TabsList className=" grid justify-between place-items-center xl:grid-cols-3 xl:border dark:md:border-none gap-x-14">
                 <TabsTrigger className="w-[162px]" value="Personal-Info">
                   Personal Info
                 </TabsTrigger>
@@ -268,7 +268,7 @@ const About = () => {
                   <div className="text-center">
                     <h3 className="h3 mb-8">Tools that i use everyday</h3>
                     <div className="mb-16">
-                      <h4 className="text-xl font- mb-2">Skills</h4>
+                      <h4 className="h4 text-foreground mb-2">Skills</h4>
                       <div className="border-b border-border mb-4"></div>
                       {/* Skills List */}
                       <div className="grid grid-cols-2 lg:grid-cols-3 mt-10 place-items-start lg:place-items-center gap-4 mx-auto lg:mx-0">
@@ -291,7 +291,7 @@ const About = () => {
                     </div>
                     {/* Tools */}
                     <div className="mt-20">
-                      <h4 className="text-xl font- mb-2">Tools</h4>
+                      <h4 className="h4 text-foreground mb-2">Tools</h4>
                       <div className="border-b border-border mb-4"></div>
                       <div className="grid grid-cols-3 place-items-center mt-10 gap-4 mx-auto lg:mx-0">
                         {getData(skillsData, "Tools").data.map(
@@ -308,7 +308,9 @@ const About = () => {
                                   priority
                                   alt="icons"
                                 />
-                                <p className="font-medium mt-2">{item.name}</p>
+                                <p className="font-medium mt-2 lg:ml-2">
+                                  {item.name}
+                                </p>
                               </div>
                             );
                           }
