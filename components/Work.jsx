@@ -49,7 +49,7 @@ const projectData = [
 
 const Work = () => {
   return (
-    <section className="relative mb-14 lg:mb-32">
+    <section className="relative my-14 lg:my-32">
       <div className="container mx-auto flex flex-col lg:flex-row justify-between">
         {/* Text */}
         <div className="w-full mx-2 text-center mb-12 lg:h-[400px] flex flex-col justify-center items-center lg:items-start lg:text-left">
@@ -58,7 +58,7 @@ const Work = () => {
             Here are my all latest projects that i have made.
           </p>
           <Link href="/projects">
-            <Button>All Projects</Button>
+            <Button>See All Projects</Button>
           </Link>
         </div>
         {/* Slider */}

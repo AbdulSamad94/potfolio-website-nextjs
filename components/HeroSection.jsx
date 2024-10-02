@@ -45,8 +45,7 @@ const HeroSection = () => {
               containerStyles="absolute top-[10%] right-0"
               icons={<RiBriefcase4Fill />}
               textOfBadge="Years of experience"
-              endCountNumber={2}
-              sign="+"
+              endCountNumber={1}
             />
             <Badge
               containerStyles="absolute top-[80%] -left-[50px]"

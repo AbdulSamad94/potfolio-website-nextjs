@@ -103,8 +103,3 @@
 .section-words-2 {
   @apply text-xl font-bold relative w-max flex items-center justify-between gap-x-3 before:bg-dots-light before:dark:bg-dots-dark before:bg-no-repeat before:bg-center before:w-[24px] before:h-[24px];
 }
-
-.swiper-horizontal>.section-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-  @apply bg-primary;
-}
