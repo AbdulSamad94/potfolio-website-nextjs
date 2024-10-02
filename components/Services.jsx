@@ -33,7 +33,7 @@ const servicesData = [
 const Services = () => {
   return (
     <section className="mb-12 lg:mb-24">
-      <div className="container mx-auto">
+      <div className="container mx-3 lg:mx-auto">
         <h2 className="section-words mb-12 lg:mb-24 text-center mx-auto">
           My services
         </h2>
@@ -42,7 +42,7 @@ const Services = () => {
           {servicesData.map((items, index) => {
             return (
               <Card
-                className="relative bg-white dark:bg-background border-2 border-primary w-full max-w-[462px] h-[300px] flex flex-col pt-16 pb-10 justify-center items-center place-self-center"
+                className="relative bg-white dark:bg-background border-2 border-primary w-[300px] lg:w-full h-[300px] flex flex-col pt-16 pb-10 justify-center items-center place-self-center"
                 key={index}
               >
                 <CardHeader className="absolute text-primary -top-[60px]">
