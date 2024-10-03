@@ -5,6 +5,7 @@
 @layer base {
   @layer base {
     :root {
+      user-select: none;
       --background: 0 0% 100%;
       --foreground: 240 19% 16%;
       --card: 0 0% 100%;

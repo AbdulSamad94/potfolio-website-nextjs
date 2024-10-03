@@ -8,7 +8,7 @@ import { Github, Link2Icon } from "lucide-react";
 
 const ProjectCard = ({ project }) => {
   return (
-    <Card className="overflow-hidden relative group h-[460px] rounded-lg border-primary border-2">
+    <Card className="overflow-hidden relative group h-[460px] hover:scale-90 duration-200 rounded-lg">
       <CardHeader className="p-0">
         {/* Image */}
         <div className="relative w-full h-[300px] flex justify-center items-center dark:bg-secondary/40 lg:bg-work-project-light lg:dark:bg-work-project-dark lg:bg-center lg:bg-no-repeat overflow-hidden">

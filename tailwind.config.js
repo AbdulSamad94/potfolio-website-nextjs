@@ -64,6 +64,8 @@ module.exports = {
 				"dots-dark": "url(/dots-dark.svg)",
 				"work-project-light": "url(/work/project-bg-light.png)",
 				"work-project-dark": "url(/work/project-bg-dark.png)",
+				"contact-light": "url(/contact/illustration-light.svg)",
+				"contact-dark": "url(/contact/illustration-dark.svg)",
 			}
 		}
 	},

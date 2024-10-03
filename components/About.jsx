@@ -139,8 +139,11 @@ const About = () => {
         </h2>
         <div className="flex flex-col justify-center items-center lg:flex-row">
           <div className="w-full flex justify-center items-center">
-            <Tabs defaultValue="Personal-Info" className="w-[800px] ">
-              <TabsList className=" grid justify-between place-items-center xl:grid-cols-3 xl:border dark:md:border-none gap-x-14">
+            <Tabs
+              defaultValue="Personal-Info"
+              className="w-[800px] flex justify-center items-center flex-col"
+            >
+              <TabsList className=" grid justify-between place-items-center xl:grid-cols-3 xl:border dark:md:border-none lg:gap-x-14 gap-y-3">
                 <TabsTrigger className="w-[162px]" value="Personal-Info">
                   Personal Info
                 </TabsTrigger>
