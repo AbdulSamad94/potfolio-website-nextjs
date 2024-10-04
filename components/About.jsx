@@ -170,9 +170,9 @@ const About = () => {
                       vision to life.
                     </p>
                     {/* Icons */}
-                    <div className="grid xl:place-items-start grid-cols-2  gap-x-14 gap-y-4 mb-12 mt-10">
+                    <div className="grid xl:place-items-start grid-cols-2 text-wrap text-center gap-x-24 gap-y-4 mb-12 mt-10">
                       {info.map((items, index) => (
-                        <div className="flex gap-x-4" key={index}>
+                        <div className="flex gap-x-2 text-center" key={index}>
                           <div className=" text-primary">{items.icon}</div>
                           <div className=" text-xs lg:text-sm">
                             {items.text}

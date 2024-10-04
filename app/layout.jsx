@@ -1,4 +1,10 @@
 import "./globals.css";
+import { Outfit } from "next/font/google";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+});
 
 // components
 import Header from "@/components/Header";
@@ -15,8 +21,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
+    <html lang="en" className={outfit.variable} suppressHydrationWarning>
+      <body className={outfit.className}>
         <ThemeProvider attributes="class" defaultTheme="system" enableSystem>
           <Header />
           {children}
