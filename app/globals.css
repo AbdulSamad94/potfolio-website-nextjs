@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 @layer base {
   @layer base {
     :root {
+      font-family: 'Outfit', sans-serif;
       user-select: none;
       --background: 0 0% 100%;
       --foreground: 240 19% 16%;
