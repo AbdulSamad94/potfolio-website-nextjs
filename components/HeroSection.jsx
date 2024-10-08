@@ -39,11 +39,9 @@ const HeroSection = () => {
                   Contact Me <Send size={16} className="ml-2" />
                 </Button>
               </Link>
-              <Link onClick={handleDownload}>
-                <Button variant="secondary">
-                  Download CV <Download size={16} className="ml-2" />
-                </Button>
-              </Link>
+              <Button onClick={handleDownload} variant="secondary">
+                Download CV <Download size={16} className="ml-2" />
+              </Button>
             </div>
             <Social iconsStyle="text-foreground text-[22px] hover:text-primary transition-all" />
           </div>
