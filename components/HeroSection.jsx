@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import { Button } from "@/components/ui/button";
 import { Download, Send } from "lucide-react";
 import Link from "next/link";
@@ -10,6 +10,13 @@ import Social from "./Social";
 import Badge from "./Badge";
 
 const HeroSection = () => {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/resume.pdf";
+    link.download = "resume.pdf";
+    link.click();
+  };
+
   return (
     <section className="py-12 mb-20 lg:mb-8 h-[120vh] lg:h-[] xl-pt-28 bg-hero-pattern bg-no-repeat bg-bottom  bg-cover dark:bg-none">
       <div className="container mx-auto">
@@ -32,9 +39,9 @@ const HeroSection = () => {
                   Contact Me <Send size={16} className="ml-2" />
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link onClick={handleDownload}>
                 <Button variant="secondary">
-                  Download CW <Download size={16} className="ml-2" />
+                  Download CV <Download size={16} className="ml-2" />
                 </Button>
               </Link>
             </div>

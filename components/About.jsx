@@ -31,7 +31,7 @@ const info = [
   },
   {
     icon: <Calendar size={20} />,
-    text: "B.O.D 11 Feb, 2008",
+    text: "D.O.B 11 Feb, 2008",
   },
   {
     icon: <GraduationCap size={20} />,
