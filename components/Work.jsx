@@ -15,6 +15,14 @@ import { Pagination } from "swiper/modules";
 
 const projectData = [
   {
+    image: "/work/work4.jpg",
+    category: "Next.js",
+    name: "Ecommerce Website Figma",
+    description:
+      "Ecommerce website built with Next.js & TailwindCSS from Figma design.",
+    link: "https://ecommerce-website-nextjs-omega.vercel.app/",
+  },
+  {
     image: "/work/work1.png",
     category: "React.js",
     name: "E-commerce Website",
@@ -37,13 +45,6 @@ const projectData = [
     description:
       "Virtual is an animated website built with React.js, Tailwind CSS, and CSS Animation.",
     link: "https://virtual-site-react-animation.vercel.app/",
-  },
-  {
-    image: "/work/work4.png",
-    category: "HTML, CSS",
-    name: "University Website",
-    description: "University website built with HTML, CSS, and JavaScript.",
-    link: "https://university-website1.vercel.app/",
   },
 ];
 

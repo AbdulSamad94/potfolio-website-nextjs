@@ -5,6 +5,14 @@ import ProjectCard from "@/components/ProjectCard";
 
 const projectData = [
   {
+    image: "/work/work4.jpg",
+    category: "Next.js",
+    name: "Ecommerce Website Figma",
+    description:
+      "Ecommerce website built with Next.js & TailwindCSS from Figma design.",
+    link: "https://ecommerce-website-nextjs-omega.vercel.app/",
+  },
+  {
     image: "/work/work1.png",
     category: "React.js",
     name: "E-commerce Website",
@@ -29,7 +37,7 @@ const projectData = [
     link: "https://virtual-site-react-animation.vercel.app/",
   },
   {
-    image: "/work/work4.png",
+    image: "/work/university.png",
     category: "HTML, CSS",
     name: "University Website",
     description: "University website built with HTML, CSS, and JavaScript.",
@@ -68,14 +76,14 @@ const projectData = [
   },
   {
     image: "/work/agecalculator.png",
-    category: "HTML, CSS & JavaScript",
+    category: "HTML, CSS & JS",
     name: "Age Calculator",
     description: "Age Calculator website built with HTML, CSS, and JavaScript.",
     link: "https://age-calculator-by-samad.vercel.app/",
   },
   {
     image: "/work/calculator.png",
-    category: "HTML, CSS & JavaScript",
+    category: "HTML, CSS & JS",
     name: "Web-Calculator",
     description: "Web-Calculator built with HTML, CSS, and JavaScript.",
     link: "https://abdulsamad94.github.io/Web-Calculator/",
@@ -103,14 +111,14 @@ const projectData = [
   },
   {
     image: "/work/stopwatch.png",
-    category: "HTML, CSS & JavaScript",
+    category: "HTML, CSS & JS",
     name: "Web-Stopwatch",
     description: "Web-Stopwatch built with HTML, CSS, and JavaScript.",
     link: "https://abdulsamad94.github.io/Web-Stop-Watch/",
   },
   {
     image: "/work/tictactoe.png",
-    category: "HTML, CSS & JavaScript",
+    category: "HTML, CSS & JS",
     name: "Web-TicTacToe",
     description: "Web-TicTacToe built with HTML, CSS, and JavaScript.",
     link: "https://abdulsamad94.github.io/Tic-Tac-Toe-Game/",
@@ -149,7 +157,7 @@ const Projects = () => {
         </h2>
 
         <Tabs defaultValue={categories} className="mb-24 lg:mb-40">
-          <TabsList className="w-full h-full grid md:grid-cols-4 lg:max-w-[800px] mb-12 mx-auto gap-x-5 gap-y-2 md:border dark:border-none">
+          <TabsList className="w-full h-full grid md:grid-cols-5 lg:max-w-[900px] mb-12 mx-auto gap-x-5 gap-y-2 md:border dark:border-none">
             {selectedCategory.map((category, index) => (
               <TabsTrigger
                 onClick={() => setCategories(category)}
