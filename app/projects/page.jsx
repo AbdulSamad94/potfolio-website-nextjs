@@ -13,6 +13,14 @@ const projectData = [
     link: "https://ecommerce-website-nextjs-omega.vercel.app/",
   },
   {
+    image: "/work/simple_blog.png",
+    category: "Next.js",
+    name: "Animated Blog Site",
+    description:
+      "Animated Blog Site built with Next.js & TailwindCSS from Figma design.",
+    link: "https://simple-blog-eight-ashy.vercel.app/",
+  },
+  {
     image: "/work/work1.png",
     category: "React.js",
     name: "E-commerce Website",

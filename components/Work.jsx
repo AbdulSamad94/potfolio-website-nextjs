@@ -15,6 +15,14 @@ import { Pagination } from "swiper/modules";
 
 const projectData = [
   {
+    image: "/work/simple_blog.png",
+    category: "Next.js",
+    name: "Animated Blog Site",
+    description:
+      "Animated Blog Site built with Next.js & TailwindCSS from Figma design.",
+    link: "https://simple-blog-eight-ashy.vercel.app/",
+  },
+  {
     image: "/work/work4.jpg",
     category: "Next.js",
     name: "Ecommerce Website Figma",
@@ -76,7 +84,7 @@ const Work = () => {
             modules={[Pagination]}
             pagination={{ clickable: true }}
           >
-            {projectData.slice(0, 4).map((project, index) => {
+            {projectData.slice(0, 5).map((project, index) => {
               return (
                 <SwiperSlide key={index}>
                   <ProjectCard project={project} />
