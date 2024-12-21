@@ -5,6 +5,14 @@ import ProjectCard from "@/components/ProjectCard";
 
 const projectData = [
   {
+    image: "/work/work10.png",
+    category: "Next.js",
+    name: "Full Stack Blog Application",
+    description:
+      "Full Stack Blog Application built with Next.js & TailwindCSS.",
+    link: "https://blog-fully-functional.vercel.app/",
+  },
+  {
     image: "/work/work4.jpg",
     category: "Next.js",
     name: "Ecommerce Website Figma",
@@ -158,7 +166,7 @@ const Projects = () => {
   });
   console.log(filterProjects);
   return (
-    <section className="min-h-screen py-12 mx-20">
+    <section className="min-h-screen py-12 md:mx-20 mx-3">
       <div>
         <h2 className="section-words mb-8 lg:mb-16 text-center mx-auto">
           My Projects
@@ -181,7 +189,7 @@ const Projects = () => {
           <div className="text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {filterProjects.map((items, index) => (
               <TabsContent
-                className="shadow-md overflow-hidden shadow-black rounded-lg"
+                className="shadow-md overflow-hidden shadow-black rounded-lg w-full"
                 key={index}
                 value={categories}
               >

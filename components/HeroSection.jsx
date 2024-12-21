@@ -23,15 +23,14 @@ const HeroSection = () => {
         <div className="flex justify-between gap-x-8">
           <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center items xl:text-left">
             <h1 className="text-sm uppercase font-semibold mb-4 text-primary tracking-widest">
-              Front-End Web Developer
+              Mern Stack Developer
             </h1>
             <h1 className="h1 mb-4">Hello, my name is Abdul Samad</h1>
             <p className="subtitle max-w-[500px] mx-auto xl:mx-0">
-              I'm a Front-End Developer specialized in building fast, responsive
-              and modern websites with Next.js, React, and Framer Motion. I
-              focus on delivering clean code and smooth animations using
-              TypeScript, JavaScript, and TailwindCSS. Let’s create seamless,
-              interactive experiences together.
+              I'm a Mern Stack Developer specialized in building fast,
+              responsive and modern websites with Next.js & React.js. I focus on
+              delivering Websites that leave lasting experience for the user.
+              Let’s create seamless, interactive experiences together.
             </p>
             <div className="flex flex-col md:flex-row gap-y-4 md:gap-x-4">
               <Link href="/contact">

@@ -15,6 +15,14 @@ import { Pagination } from "swiper/modules";
 
 const projectData = [
   {
+    image: "/work/work10.png",
+    category: "Next.js",
+    name: "Full Stack Blog Application",
+    description:
+      "Full Stack Blog Application built with Next.js & TailwindCSS.",
+    link: "https://blog-fully-functional.vercel.app/",
+  },
+  {
     image: "/work/simple_blog.png",
     category: "Next.js",
     name: "Animated Blog Site",

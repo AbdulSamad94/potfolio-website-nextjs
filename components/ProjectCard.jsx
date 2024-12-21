@@ -12,14 +12,15 @@ const ProjectCard = ({ project }) => {
       <CardHeader className="p-0">
         {/* Image */}
         <div className="relative w-full h-[300px] flex justify-center items-center dark:bg-secondary/40 lg:bg-work-project-light lg:dark:bg-work-project-dark lg:bg-center lg:bg-no-repeat overflow-hidden">
-          <Image
-            className="absolute bottom-0 shadow-xl shadow-black rounded-tr-3xl rounded-tl-3xl"
-            src={project.image}
-            width={250}
-            height={250}
-            alt="project-image"
-            priority
-          />
+          <div className="absolute bottom-0 shadow-xl shadow-black">
+            <Image
+              src={project.image}
+              width={250}
+              height={250}
+              alt="project-image"
+              className="rounded-tr-3xl rounded-tl-3xl w-[250px] h-[230px]"
+            />
+          </div>
           <div className="flex justify-center items-center cursor-pointer">
             <Link
               href={project.link}

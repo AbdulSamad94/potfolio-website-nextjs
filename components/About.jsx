@@ -13,7 +13,8 @@ import {
 
 import { FaReact } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiTypescript, SiJavascript } from "react-icons/si";
+import { SiTypescript, SiJavascript, SiMongodb } from "react-icons/si";
+import { DiNodejs } from "react-icons/di";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
 const info = [
@@ -84,19 +85,27 @@ const skillsData = [
     data: [
       {
         name: "Next JS",
-        icon: <RiNextjsFill />,
+        icon: <RiNextjsFill size={20} />,
       },
       {
         name: "React JS",
-        icon: <FaReact />,
+        icon: <FaReact size={20} />,
+      },
+      {
+        name: "Node.js",
+        icon: <DiNodejs size={50} />,
+      },
+      {
+        name: "MongoDB",
+        icon: <SiMongodb size={20} />,
       },
       {
         name: "Framer Motion",
-        icon: <TbBrandFramerMotion />,
+        icon: <TbBrandFramerMotion size={20} />,
       },
       {
         name: "TailwindCSS",
-        icon: <RiTailwindCssFill />,
+        icon: <RiTailwindCssFill size={20} />,
       },
       {
         name: "Javascript",
@@ -161,7 +170,7 @@ const About = () => {
                   <div className="flex justify-center items-center flex-col text-center xl:text-left">
                     <h3 className="h3 mb-4 text-center">Personal Info</h3>
                     <p className="subtitle w-auto mx-auto xl:mx-0 text-center">
-                      I offer front-end development services, specializing in
+                      I offer Mern Stack development services, specializing in
                       building fast, responsive websites using Next.js, React,
                       and TailwindCSS. From clean code to smooth animations with
                       Framer Motion, I create seamless, interactive experiences.

@@ -16,8 +16,9 @@ const ContactPage = () => {
             </div>
             <h1 className="h1 max-w-md mb-8">Let's Work Together.</h1>
             <p className="max-w-[400px] subtitle">
-              I am a passionate Frontend Web Developer with 1 year experience
-              and expertise in building responsive and dynamic websites.
+              I am a passionate Mern Stack Developer with experience and
+              expertise in building responsive and dynamic websites wiht Modern
+              UI's.
             </p>
           </div>
           {/* Img */}
