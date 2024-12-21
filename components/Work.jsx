@@ -19,8 +19,24 @@ const projectData = [
     category: "Next.js",
     name: "Full Stack Blog Application",
     description:
-      "Full Stack Blog Application built with Next.js & TailwindCSS.",
+      "Full Stack Blog Application built with Next.js, React.js, MongoDB & TailwindCSS.",
     link: "https://blog-fully-functional.vercel.app/",
+  },
+  {
+    image: "/work/work1.png",
+    category: "React.js",
+    name: "E-commerce Website",
+    description:
+      "E-commerce website built with React.js, Tailwind CSS & Framer-Motion..",
+    link: "https://e-commerce-website1-lac.vercel.app/",
+  },
+  {
+    image: "/work/work4.jpg",
+    category: "Next.js",
+    name: "Ecommerce Website Figma",
+    description:
+      "Ecommerce website built with Next.js & TailwindCSS using FakeStore API.",
+    link: "https://ecommerce-website-nextjs-omega.vercel.app/",
   },
   {
     image: "/work/simple_blog.png",
@@ -29,22 +45,6 @@ const projectData = [
     description:
       "Animated Blog Site built with Next.js & TailwindCSS from Figma design.",
     link: "https://simple-blog-eight-ashy.vercel.app/",
-  },
-  {
-    image: "/work/work4.jpg",
-    category: "Next.js",
-    name: "Ecommerce Website Figma",
-    description:
-      "Ecommerce website built with Next.js & TailwindCSS from Figma design.",
-    link: "https://ecommerce-website-nextjs-omega.vercel.app/",
-  },
-  {
-    image: "/work/work1.png",
-    category: "React.js",
-    name: "E-commerce Website",
-    description:
-      "E-commerce website built with React.js, Tailwind CSS, and Framer-Motion..",
-    link: "https://e-commerce-website1-lac.vercel.app/",
   },
   {
     image: "/work/work2.png",
