@@ -28,7 +28,7 @@ const info = [
   },
   {
     icon: <MailIcon size={20} />,
-    text: "abdulsamadsiddiqui2000@gmail.com",
+    text: "abdulsamadwork109@gmail.com",
   },
   {
     icon: <Calendar size={20} />,
