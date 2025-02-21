@@ -13,9 +13,9 @@ import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata = {
-  title: "Portfolio Website AS",
+  title: "Abdul Samad Siddiqui | Full Stack Developer | React & Next.js Expert",
   description:
-    "personal portfolio modern website, showcasing my skills in frontend developement",
+    "Abdul Samad Siddiqui is a Full Stack Developer with expertise in React and Next.js. I am passionate about building scalable and user-friendly applications.",
   icons: {
     icon: "/logo.png",
   },

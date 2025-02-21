@@ -23,28 +23,20 @@ const projectData = [
     link: "https://blog-fully-functional.vercel.app/",
   },
   {
+    image: "/work/work4.png",
+    category: "Next.js",
+    name: "E-commerce Website",
+    description:
+      "Fully functional E-commerce website built with Next.js & TailwindCSS.",
+    link: "https://e-commerce-marketplace-ten.vercel.app/",
+  },
+  {
     image: "/work/work1.png",
     category: "React.js",
     name: "E-commerce Website",
     description:
-      "E-commerce website built with React.js, Tailwind CSS & Framer-Motion..",
+      "E-commerce website built with React.js, Tailwind CSS & Framer-Motion.",
     link: "https://e-commerce-website1-lac.vercel.app/",
-  },
-  {
-    image: "/work/work4.jpg",
-    category: "Next.js",
-    name: "Ecommerce Website Figma",
-    description:
-      "Ecommerce website built with Next.js & TailwindCSS using FakeStore API.",
-    link: "https://ecommerce-website-nextjs-omega.vercel.app/",
-  },
-  {
-    image: "/work/simple_blog.png",
-    category: "Next.js",
-    name: "Animated Blog Site",
-    description:
-      "Animated Blog Site built with Next.js & TailwindCSS from Figma design.",
-    link: "https://simple-blog-eight-ashy.vercel.app/",
   },
   {
     image: "/work/work2.png",
@@ -62,14 +54,22 @@ const projectData = [
       "Virtual is an animated website built with React.js, Tailwind CSS, and CSS Animation.",
     link: "https://virtual-site-react-animation.vercel.app/",
   },
+  {
+    image: "/work/simple_blog.png",
+    category: "Next.js",
+    name: "Animated Blog Site",
+    description:
+      "Animated Blog Site built with Next.js & TailwindCSS from Figma design.",
+    link: "https://simple-blog-eight-ashy.vercel.app/",
+  },
 ];
 
 const Work = () => {
   return (
-    <section className="relative my-14 lg:my-32">
+    <section className="relative my-14 lg:my-32 mx-4">
       <div className="container mx-auto flex flex-col lg:flex-row justify-between">
         {/* Text */}
-        <div className="w-full mx-2 text-center mb-12 lg:h-[400px] flex flex-col justify-center items-center lg:items-start lg:text-left">
+        <div className="w-auto mx-2 text-center mb-12 lg:h-[400px] flex flex-col justify-center items-center lg:items-start lg:text-left">
           <h2 className="section-words mb-4">Latest Project</h2>
           <p className="subtitle mb-8">
             Here are my all latest projects that i have made.

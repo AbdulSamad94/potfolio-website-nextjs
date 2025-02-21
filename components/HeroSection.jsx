@@ -23,14 +23,16 @@ const HeroSection = () => {
         <div className="flex justify-between gap-x-8">
           <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center items xl:text-left">
             <h1 className="text-sm uppercase font-semibold mb-4 text-primary tracking-widest">
-              Mern Stack Developer
+              Full Stack Developer
             </h1>
             <h1 className="h1 mb-4">Hello, my name is Abdul Samad</h1>
             <p className="subtitle max-w-[500px] mx-auto xl:mx-0">
-              I'm a Mern Stack Developer specialized in building fast,
-              responsive and modern websites with Next.js & React.js. I focus on
-              delivering Websites that leave lasting experience for the user.
-              Let’s create seamless, interactive experiences together.
+              I am a Full Stack Developer with expertise in Next.js 15, React,
+              TypeScript, TailwindCSS, Node.js, and MongoDB. I have experience
+              in developing scalable web applications, e-commerce sites, and
+              content-driven sites using HeadlessCMS. Passionate on performance,
+              UX, and backend efficiency, I aim to produce fast, secure, and
+              user-friendly apps with Modern UI's.
             </p>
             <div className="flex flex-col md:flex-row gap-y-4 md:gap-x-4">
               <Link href="/contact">

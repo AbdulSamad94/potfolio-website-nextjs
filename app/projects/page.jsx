@@ -21,12 +21,12 @@ const projectData = [
     link: "https://e-commerce-website1-lac.vercel.app/",
   },
   {
-    image: "/work/work4.jpg",
+    image: "/work/work4.png",
     category: "Next.js",
     name: "Ecommerce Website",
     description:
-      "Ecommerce website built with Next.js, React.js, FakeStoreAPI & TailwindCSS.",
-    link: "https://ecommerce-website-nextjs-omega.vercel.app/",
+      "Fully functional E-commerce website built with Next.js & TailwindCSS.",
+    link: "https://e-commerce-marketplace-ten.vercel.app/",
   },
   {
     image: "/work/simple_blog.png",

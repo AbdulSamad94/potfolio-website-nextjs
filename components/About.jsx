@@ -36,7 +36,7 @@ const info = [
   },
   {
     icon: <GraduationCap size={20} />,
-    text: "SSC In Computer Science",
+    text: "HSC In CS",
   },
   {
     icon: <HomeIcon size={20} />,
@@ -71,8 +71,8 @@ const qualifications = [
       },
       {
         Company: "Governor House Sindh",
-        role: "Full Stack Developer",
-        qualification: "Student",
+        role: "Agentic AI developer",
+        qualification: "Student Leader",
         year: "2024-Present",
       },
     ],
@@ -170,20 +170,17 @@ const About = () => {
                   <div className="flex justify-center items-center flex-col text-center xl:text-left">
                     <h3 className="h3 mb-4 text-center">Personal Info</h3>
                     <p className="subtitle w-auto mx-auto xl:mx-0 text-center">
-                      I offer Mern Stack development services, specializing in
-                      building fast, responsive websites using Next.js, React,
-                      and TailwindCSS. From clean code to smooth animations with
-                      Framer Motion, I create seamless, interactive experiences.
-                      Whether you need custom web applications, performance
-                      optimization, or stunning UI/UX, I’m here to bring your
-                      vision to life.
+                      I am 17 years old and live in Karachi, Pakistan. As a
+                      computer science student at Jinnah College, I'm in my
+                      first year (HHC Part 1), and I'm also learning about
+                      Agentic AI at Governor House IT initiative.
                     </p>
                     {/* Icons */}
-                    <div className="grid xl:place-items-start grid-cols-2 text-wrap text-center gap-x-24 gap-y-4 mb-12 mt-10">
+                    <div className="grid xl:place-items-start grid-cols-2 text-wrap text-center gap-x-10 gap-y-4 mb-12 mt-10">
                       {info.map((items, index) => (
                         <div className="flex gap-x-2 text-center" key={index}>
                           <div className=" text-primary">{items.icon}</div>
-                          <div className=" text-xs lg:text-sm">
+                          <div className="break-words break-all text-xs lg:text-sm text-center">
                             {items.text}
                           </div>
                         </div>

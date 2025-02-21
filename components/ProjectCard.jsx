@@ -15,10 +15,10 @@ const ProjectCard = ({ project }) => {
           <div className="absolute bottom-0 shadow-xl shadow-black">
             <Image
               src={project.image}
-              width={250}
-              height={250}
+              width={200}
+              height={200}
               alt="project-image"
-              className="rounded-tr-3xl rounded-tl-3xl w-[250px] h-[230px]"
+              className="rounded-tr-lg rounded-tl-lg w-full h-full"
             />
           </div>
           <div className="flex justify-center items-center cursor-pointer">

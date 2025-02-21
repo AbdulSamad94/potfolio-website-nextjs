@@ -13,20 +13,21 @@ import {
 const servicesData = [
   {
     icon: <GanttChartSquare size={72} strokeWidth={0.8} />,
-    title: "Web Design",
-    description: "I provide high-quality web designing services.",
+    title: "Full Stack Web Development",
+    description:
+      "Building scalable, high-performance web applications, ensuring efficient and user-friendly experiences.",
   },
   {
     icon: <Blocks size={72} strokeWidth={0.8} />,
-    title: "Web Development",
+    title: "E-Commerce Development",
     description:
-      "I provide Fast, Responsive, And Stunning Websites With Modern UI.",
+      "Developing custom e-commerce solutions with secure authentication, payment integrations, and optimized performance.",
   },
   {
     icon: <Gem size={72} strokeWidth={0.8} />,
-    title: "Custom GPT",
+    title: "Frontend UI/UX Design",
     description:
-      "I am learning Custom GPT and will provide custom GPT services soon .",
+      "Creating responsive, visually appealing, and fast-loading interfaces, ensuring seamless user experiences across all devices.",
   },
 ];
 
