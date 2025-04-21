@@ -23,42 +23,28 @@ const reviewsData = [
     name: "John Doe",
     job: "Chef",
     review:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet mollitia voluptate omnis a saepe magnam.",
+      "Abdul Samad delivered our web faster than expected, and it looked better than expected. Communication was good, and he really knows his stack. Highly recommended!",
   },
   {
     avatar: "/reviews/avatar-2.png",
     name: "Evey Anderson",
     job: "Funiture Designer",
     review:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet mollitia voluptate omnis a saepe magnam.",
+      "I'm not a tech person, but Abdul made the entire process easy. He explained everything clearly and delivered a clean, fast website for our business. 10/10 experience!",
   },
   {
     avatar: "/reviews/avatar-3.png",
     name: "Thomas Richardson",
     job: "Engineer",
     review:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet mollitia voluptate omnis a saepe magnam.",
+      "Abdul's AI knowledge is way ahead of his age. He helped us prototype an internal automation tool using the OpenAI Agent SDK — super impressive work!",
   },
   {
     avatar: "/reviews/avatar-4.png",
     name: "Amelia Johnson",
     job: "Digital Marketer",
     review:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet mollitia voluptate omnis a saepe magnam.",
-  },
-  {
-    avatar: "/reviews/avatar-5.png",
-    name: "Joseph Jhon",
-    job: "Youtuber",
-    review:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet mollitia voluptate omnis a saepe magnam.",
-  },
-  {
-    avatar: "/reviews/avatar-6.png",
-    name: "Daniel Kasporov",
-    job: "Graphic Designer",
-    review:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet mollitia voluptate omnis a saepe magnam.",
+      "Very professional. Abdul understood our requirements quickly and built exactly what we needed using the MERN stack. Looking forward to more collaborations.",
   },
 ];
 
@@ -129,7 +115,7 @@ const Reviews = () => {
                           <Image
                             width={15}
                             height={15}
-                            src={"/reviews/star_dull_icon.png"}
+                            src={"/reviews/star_icon.png"}
                             alt=""
                           />
                         </div>

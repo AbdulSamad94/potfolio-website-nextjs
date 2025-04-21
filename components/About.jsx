@@ -141,7 +141,7 @@ const About = () => {
     return arr.find((item) => item.title === title);
   };
   return (
-    <section className="lg:h-[860px] pb-12 lg:py-24">
+    <section className="lg:h-[860px] pb-12">
       <div className="container mx-auto">
         <h2 className="section-words mb-8 xl:mb-16 text-center mx-auto">
           About me
@@ -170,10 +170,11 @@ const About = () => {
                   <div className="flex justify-center items-center flex-col text-center xl:text-left">
                     <h3 className="h3 mb-4 text-center">Personal Info</h3>
                     <p className="subtitle w-auto mx-auto xl:mx-0 text-center">
-                      I am 17 years old and live in Karachi, Pakistan. As a
-                      computer science student at Jinnah College, I'm in my
-                      first year (HHC Part 1), and I'm also learning about
-                      Agentic AI at Governor House IT initiative.
+                      I'm a 17-year-old computer science student from Karachi,
+                      currently in my first year (HHC Part 1). Alongside my
+                      studies, I'm actively specializing in Agentic AI through
+                      the Governor House's IT & AI initiative, gaining hands-on
+                      experience with next-gen AI technologies.
                     </p>
                     {/* Icons */}
                     <div className="grid xl:place-items-start grid-cols-2 text-wrap text-center gap-x-10 gap-y-4 mb-12 mt-10">

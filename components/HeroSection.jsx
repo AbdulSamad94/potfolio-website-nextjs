@@ -18,7 +18,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="py-12 mb-20 lg:mb-8 h-[120vh] lg:h-[] xl-pt-28 bg-hero-pattern bg-no-repeat bg-bottom  bg-cover dark:bg-none">
+    <section className="py-8 mb-20 lg:mb-8 h-[120vh] lg:h-[] xl-pt-28 bg-hero-pattern bg-no-repeat bg-bottom  bg-cover dark:bg-none">
       <div className="container mx-auto">
         <div className="flex justify-between gap-x-8">
           <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center items xl:text-left">
@@ -27,12 +27,10 @@ const HeroSection = () => {
             </h1>
             <h1 className="h1 mb-4">Hello, my name is Abdul Samad</h1>
             <p className="subtitle max-w-[500px] mx-auto xl:mx-0">
-              I am a Full Stack Developer with expertise in Next.js 15, React,
-              TypeScript, TailwindCSS, Node.js, and MongoDB. I have experience
-              in developing scalable web applications, e-commerce sites, and
-              content-driven sites using HeadlessCMS. Passionate on performance,
-              UX, and backend efficiency, I aim to produce fast, secure, and
-              user-friendly apps with Modern UI's.
+              I'm a Full Stack & Agentic AI Developer building fast, functional,
+              and future-proof digital solutions. From stylish UIs to
+              intelligent AI agents, I bring ideas into action, with code,
+              creativity, and purpose.
             </p>
             <div className="flex flex-col md:flex-row gap-y-4 md:gap-x-4">
               <Link href="/contact">
@@ -53,13 +51,14 @@ const HeroSection = () => {
               containerStyles="absolute top-[10%] right-0"
               icons={<RiBriefcase4Fill />}
               textOfBadge="Years of experience"
-              endCountNumber={1}
+              endCountNumber={2}
+              sign={"+"}
             />
             <Badge
               containerStyles="absolute top-[80%] -left-[50px]"
               icons={<RiTodoFill />}
               textOfBadge="Projects Completed"
-              endCountNumber={40}
+              endCountNumber={50}
               sign="+"
             />
             <div className="bg-hero-shape-light dark:bg-hero-shape-dark w-[510px] h-[510px] bg-no-repeat absolute -top-1 -right-2"></div>

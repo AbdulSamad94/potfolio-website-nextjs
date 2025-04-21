@@ -18,7 +18,7 @@ const ProjectCard = ({ project }) => {
               width={200}
               height={200}
               alt="project-image"
-              className="rounded-tr-lg rounded-tl-lg w-full h-full"
+              className="rounded-tr-lg rounded-tl-lg w-[200px] h-[200px]"
             />
           </div>
           <div className="flex justify-center items-center cursor-pointer">

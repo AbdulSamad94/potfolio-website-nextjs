@@ -19,9 +19,9 @@ const servicesData = [
   },
   {
     icon: <Blocks size={72} strokeWidth={0.8} />,
-    title: "E-Commerce Development",
+    title: "AI-Powered Automation & Agents",
     description:
-      "Developing custom e-commerce solutions with secure authentication, payment integrations, and optimized performance.",
+      "I design and integrate AI agents using OpenAI SDK and cutting-edge tools that can automate tasks, enhance productivity, and deliver smart, contextual experiences.",
   },
   {
     icon: <Gem size={72} strokeWidth={0.8} />,

@@ -54,21 +54,44 @@ const projectData = [
   },
   {
     image: "/work/university.png",
-    category: "HTML, CSS",
+    category: "HTML, CSS & JS",
     name: "University Website",
     description: "University website built with HTML, CSS, and JavaScript.",
     link: "https://university-website1.vercel.app/",
   },
   {
     image: "/work/netflix.png",
-    category: "HTML, CSS",
+    category: "HTML, CSS & JS",
     name: "NetFlix Clone Website",
     description: "NetFlix Clone website built with HTML, CSS, and JavaScript.",
     link: "https://netflix-clone-as.vercel.app/",
   },
   {
+    image: "/work/python-3.png",
+    category: "Python",
+    name: "Secure Data Encyption",
+    description: "Built a Secure Data Encryption Python and Streamlit.",
+    link: "https://secure-data-encryption-109.streamlit.app/",
+  },
+  {
+    image: "/work/python-2.png",
+    category: "Python",
+    name: "Unit Converter & Chatbot",
+    description:
+      "Built a Unit Converter & Unit Converter only Chatbot using Python, Streamlit, and Gemini.",
+    link: "https://enhanced-unit-converter-109.streamlit.app/",
+  },
+  {
+    image: "/work/python-1.png",
+    category: "Python",
+    name: "Growth Mindset & Chatbot",
+    description:
+      "Built a Growth Mindset & Chatbot using Python, Streamlit, and Gemini.",
+    link: "https://growth-challenge109.streamlit.app/",
+  },
+  {
     image: "/work/facebook.png",
-    category: "HTML, CSS",
+    category: "HTML, CSS & JS",
     name: "Facebook Login Clone",
     description:
       "Facebook Login Clone website built with HTML, CSS, and JavaScript.",
@@ -76,7 +99,7 @@ const projectData = [
   },
   {
     image: "/work/instagram.png",
-    category: "HTML, CSS",
+    category: "HTML, CSS & JS",
     name: "Instagram Login Clone",
     description:
       "Instagram Login Clone website built with HTML, CSS, and JavaScript.",
@@ -84,7 +107,7 @@ const projectData = [
   },
   {
     image: "/work/twitter.png",
-    category: "HTML, CSS",
+    category: "HTML, CSS & JS",
     name: "Twitter Login Clone",
     description:
       "Twitter Login Clone website built with HTML, CSS, and JavaScript.",
