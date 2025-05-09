@@ -141,7 +141,7 @@ const About = () => {
     return arr.find((item) => item.title === title);
   };
   return (
-    <section className="lg:h-[860px] pb-12">
+    <section className="lg:h-[860px] pb-12 mt-20 lg:mt-0">
       <div className="container mx-auto">
         <h2 className="section-words mb-8 xl:mb-16 text-center mx-auto">
           About me

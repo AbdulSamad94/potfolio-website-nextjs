@@ -21,7 +21,7 @@ const servicesData = [
     icon: <Blocks size={72} strokeWidth={0.8} />,
     title: "AI-Powered Automation & Agents",
     description:
-      "I design and integrate AI agents using OpenAI SDK and cutting-edge tools that can automate tasks, enhance productivity, and deliver smart, contextual experiences.",
+      "I integrate AI agents using OpenAI agent SDK that can automate tasks, enhance productivity, and deliver smart solutions.",
   },
   {
     icon: <Gem size={72} strokeWidth={0.8} />,

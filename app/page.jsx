@@ -8,12 +8,24 @@ import Cta from "@/components/Cta";
 export default function Home() {
   return (
     <main>
-      <HeroSection />
-      <About />
-      <Services />
-      <Work />
-      <Reviews />
-      <Cta />
+      <section>
+        <HeroSection />
+      </section>
+      <section className="mt-32">
+        <About />
+      </section>
+      <section className="mt-24">
+        <Services />
+      </section>
+      <section className="mt-32">
+        <Work />
+      </section>
+      <section className="20">
+        <Reviews />
+      </section>
+      <section>
+        <Cta />
+      </section>
     </main>
   );
 }

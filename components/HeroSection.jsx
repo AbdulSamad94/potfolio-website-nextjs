@@ -18,7 +18,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="py-8 mb-20 lg:mb-8 h-[120vh] lg:h-[] xl-pt-28 bg-hero-pattern bg-no-repeat bg-bottom  bg-cover dark:bg-none">
+    <section className="py-8 mb-20 lg:mb-8 lg:h-[] xl-pt-28 bg-hero-pattern bg-no-repeat bg-bottom  bg-cover dark:bg-none mx-3">
       <div className="container mx-auto">
         <div className="flex justify-between gap-x-8">
           <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center items xl:text-left">
@@ -26,7 +26,7 @@ const HeroSection = () => {
               Full Stack Developer
             </h1>
             <h1 className="h1 mb-4">Hello, my name is Abdul Samad</h1>
-            <p className="subtitle max-w-[500px] mx-auto xl:mx-0">
+            <p className="subtitle md:max-w-[500px] mx-auto xl:mx-0">
               I'm a Full Stack & Agentic AI Developer building fast, functional,
               and future-proof digital solutions. From stylish UIs to
               intelligent AI agents, I bring ideas into action, with code,
