@@ -9,7 +9,7 @@ const Footer = () => {
             <Social iconsStyle="text-primary dark:text-white/70 text-[20px] hover:text-white dark:hover:text-primary transition-all" />
           </div>
           <p className="text-muted-foreground text-center">
-            Copyright &copy; Abdul Samad. 2024 All rights reserved.
+            Copyright &copy; Abdul Samad. 2025 All rights reserved.
           </p>
         </div>
       </div>
