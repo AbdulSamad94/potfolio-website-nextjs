@@ -1,135 +1,108 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
-import "swiper/css/pagination";
-
-import { Pagination } from "swiper/modules";
+import { Star, Quote } from "lucide-react";
 
 const reviewsData = [
   {
-    avatar: "/reviews/avatar-1.png",
-    name: "John Doe",
-    job: "Chef",
+    avatar: "/reviews/client-1.png",
+    name: "rperrylifealarm",
+    job: "Fiverr Client",
     review:
-      "Abdul Samad delivered our web faster than expected, and it looked better than expected. Communication was good, and he really knows his stack. Highly recommended!",
-  },
-  {
-    avatar: "/reviews/avatar-2.png",
-    name: "Evey Anderson",
-    job: "Funiture Designer",
-    review:
-      "I'm not a tech person, but Abdul made the entire process easy. He explained everything clearly and delivered a clean, fast website for our business. 10/10 experience!",
+      "Thank you so much! It was truly a pleasure working with you. I'm glad I could meet your expectations and deliver what you needed. Looking forward to more collaborations in the future",
+    rating: 5,
   },
   {
     avatar: "/reviews/avatar-3.png",
+    name: "Evey Anderson",
+    job: "Furniture Designer",
+    review:
+      "I'm not a tech person, but Abdul made the entire process easy. He explained everything clearly and delivered a clean, fast website for our business. 10/10 experience!",
+    rating: 5,
+  },
+  {
+    avatar:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
     name: "Thomas Richardson",
     job: "Engineer",
     review:
       "Abdul's AI knowledge is way ahead of his age. He helped us prototype an internal automation tool using the OpenAI Agent SDK — super impressive work!",
-  },
-  {
-    avatar: "/reviews/avatar-4.png",
-    name: "Amelia Johnson",
-    job: "Digital Marketer",
-    review:
-      "Very professional. Abdul understood our requirements quickly and built exactly what we needed using the MERN stack. Looking forward to more collaborations.",
+    rating: 5,
   },
 ];
 
 const Reviews = () => {
   return (
-    <section className="mb-12 lg:mb-24">
-      <div className="container mx-auto">
-        <h2 className="section-words mb-12 lg:mb-24 text-center mx-auto">
-          My reviews
-        </h2>
-        {/* Swiper */}
-        <Swiper
-          slidesPerView={1}
-          breakpoints={{
-            640: { slidesPerView: 2 },
-            1200: { slidesPerView: 3 },
-          }}
-          spaceBetween={30}
-          pagination={{ clickable: true }}
-          modules={[Pagination]}
-          className="h-[350px]"
-        >
-          {reviewsData.map((item, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <Card className="bg-orange-50 dark:bg-secondary/40 p-8 min-h-[250px] mx-3 border-primary rounded-lg shadow-orange-500 shadow">
-                  <CardHeader className="p-0 mb-10">
-                    <div className="flex items-center gap-x-5">
-                      {/* Images */}
-                      <Image
-                        src={item.avatar}
-                        width={70}
-                        height={70}
-                        alt="reviewers"
-                        priority
-                        className="ring-2 ring-primary rounded-full"
+    <section className="py-16 lg:py-24 bg-gradient-to-br relative">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 dark:text-white mb-4">
+            Client Reviews
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            What my clients say about working with me
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {reviewsData.map((item, index) => (
+            <div
+              key={index}
+              className="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-orange-100 dark:border-gray-700 h-full flex flex-col"
+            >
+              {/* Quote Icon */}
+              <div className="absolute top-6 right-6 text-orange-200 dark:text-orange-800">
+                <Quote size={32} />
+              </div>
+
+              {/* Header */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="relative">
+                  <img
+                    src={item.avatar}
+                    alt={item.name}
+                    className="w-16 h-16 object-cover rounded-full ring-4 ring-orange-200 dark:ring-orange-700 transition-transform group-hover:scale-110"
+                  />
+                  <div className="absolute -bottom-1 -right-1 bg-orange-500 rounded-full p-1">
+                    <Star size={12} className="text-white fill-current" />
+                  </div>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-bold text-lg text-gray-800 dark:text-white truncate">
+                    {item.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 truncate">
+                    {item.job}
+                  </p>
+                  {/* Star Rating */}
+                  <div className="flex gap-1 mt-1">
+                    {[...Array(item.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        size={14}
+                        className="text-orange-400 fill-current"
                       />
-                      <div className="flex flex-col gap-y-2">
-                        <CardTitle>{item.name}</CardTitle>
-                        <p className="text-muted-foreground text-sm">
-                          {item.job}
-                        </p>
-                        <div className="flex gap-1 items-center">
-                          <Image
-                            width={15}
-                            height={15}
-                            src={"/reviews/star_icon.png"}
-                            alt=""
-                          />
-                          <Image
-                            width={15}
-                            height={15}
-                            src={"/reviews/star_icon.png"}
-                            alt=""
-                          />
-                          <Image
-                            width={15}
-                            height={15}
-                            src={"/reviews/star_icon.png"}
-                            alt=""
-                          />
-                          <Image
-                            width={15}
-                            height={15}
-                            src={"/reviews/star_icon.png"}
-                            alt=""
-                          />
-                          <Image
-                            width={15}
-                            height={15}
-                            src={"/reviews/star_icon.png"}
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardDescription className="text-base text-muted-foreground ">
-                    {item.review}
-                  </CardDescription>
-                </Card>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Review Text - This will expand to fill available space */}
+              <div className="flex-1">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base">
+                  "{item.review}"
+                </p>
+              </div>
+
+              {/* Decorative bottom border */}
+              <div className="mt-6 pt-4 border-t border-orange-100 dark:border-gray-700">
+                <div className="w-12 h-1 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full mx-auto"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Additional decorative elements */}
       </div>
     </section>
   );
