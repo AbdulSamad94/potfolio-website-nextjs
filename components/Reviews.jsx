@@ -7,9 +7,9 @@ const reviewsData = [
   {
     avatar: "/reviews/client-1.png",
     name: "rperrylifealarm",
-    job: "Fiverr Client",
+    job: "Fiverr",
     review:
-      "Thank you so much! It was truly a pleasure working with you. I'm glad I could meet your expectations and deliver what you needed. Looking forward to more collaborations in the future",
+      "Abdul did an exceptional job on our project. His understanding and ability to meet our company’s project goals were beyond expectations. We feel very comfortable and excited to work with him more in the future.",
     rating: 5,
   },
   {
