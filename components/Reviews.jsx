@@ -5,7 +5,8 @@ import { Star, Quote } from "lucide-react";
 
 const reviewsData = [
   {
-    avatar: "/reviews/client-1.png",
+    avatar:
+      "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/6499329eb4677991d6975a9392e8a471-660592091737997960.045662/8D02F39D-05D6-4B1F-A140-48EE55B2EF7E",
     name: "rperrylifealarm",
     job: "Fiverr",
     review:
