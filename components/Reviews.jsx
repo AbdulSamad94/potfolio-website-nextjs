@@ -58,11 +58,13 @@ const Reviews = () => {
               {/* Header */}
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative">
-                  <img
-                    src={item.avatar}
-                    alt={item.name}
-                    className="w-16 h-16 object-cover rounded-full ring-4 ring-orange-200 dark:ring-orange-700 transition-transform group-hover:scale-110"
-                  />
+                  <div className="w-16 h-16">
+                    <img
+                      src={item.avatar}
+                      alt={item.name}
+                      className="w-full h-full object-cover rounded-full ring-4 ring-orange-200 dark:ring-orange-700 transition-transform group-hover:scale-110"
+                    />
+                  </div>
                   <div className="absolute -bottom-1 -right-1 bg-orange-500 rounded-full p-1">
                     <Star size={12} className="text-white fill-current" />
                   </div>
