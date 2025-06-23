@@ -7,7 +7,7 @@ const reviewsData = [
   {
     avatar:
       "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/6499329eb4677991d6975a9392e8a471-660592091737997960.045662/8D02F39D-05D6-4B1F-A140-48EE55B2EF7E",
-    name: "rperrylifealarm",
+    name: "Ronnie Perry",
     job: "Fiverr",
     review:
       "Abdul did an exceptional job on our project. His understanding and ability to meet our company’s project goals were beyond expectations. We feel very comfortable and excited to work with him more in the future.",
