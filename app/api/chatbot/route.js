@@ -15,7 +15,7 @@ export async function POST(request) {
         }
 
         // Use IPv4 address instead of localhost to avoid IPv6 issues
-        const pythonBackendUrl = process.env.PYTHON_BACKEND_URL || 'http://127.0.0.1:8000/chat';
+        const pythonBackendUrl = process.env.NEXT_PUBLIC_PYTHON_BACKEND_URL;
 
         console.log(`Forwarding message to Python backend: ${message}`);
         console.log(`Backend URL: ${pythonBackendUrl}`);
