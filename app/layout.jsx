@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Outfit } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import Chat from "@/components/chatbot/chat";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider attributes="class" defaultTheme="system" enableSystem>
           <Header />
           {children}
+          <Chat />
           <Footer />
         </ThemeProvider>
         <Analytics />
