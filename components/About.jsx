@@ -255,7 +255,7 @@ const About = () => {
                                 <div className="group" key={index}>
                                   <div className="font-semibold text-xl relative leading-none mb-2">
                                     <div className="bg-orange-600  w-[10px] h-[10px] rounded-full absolute left-[-35px] z-10 transition-all duration-500 top-1/2 -translate-y-1/2 group-hover:top-[85px]"></div>
-                                    <div className="h-[65px] w-[2px] bg-slate-300 absolute top-[15px] -left-[31px]"></div>
+                                    <div className="h-[75px] w-[2px] bg-slate-300 absolute top-[15px] -left-[31px]"></div>
                                     {school}
                                   </div>
                                   <div className="text-lg font-medium leading-none mb-4">
