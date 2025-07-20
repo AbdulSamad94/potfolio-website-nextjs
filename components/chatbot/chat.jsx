@@ -2,6 +2,41 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ArrowDown, MessageCircleMore, SendHorizontal, X } from "lucide-react";
 
+// Enhanced markdown-like parser for bot responses
+const parseMessageText = (text) => {
+  if (!text) return text;
+
+  // Replace **text** with bold
+  text = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+
+  // Replace bullet points (•) with proper list items
+  text = text.replace(/^• (.+)$/gm, "<li>$1</li>");
+
+  // Replace lines starting with **header:** with proper headers
+  text = text.replace(
+    /^\*\*(.*?):\*\*(.*)$/gm,
+    '<h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-1 mt-2">$1:</h4><p class="mb-2">$2</p>'
+  );
+
+  // Wrap consecutive list items in ul tags
+  text = text.replace(
+    /(<li>.*<\/li>\s*)+/gs,
+    '<ul class="list-disc list-inside mb-3 space-y-1 ml-2">$&</ul>'
+  );
+
+  // Handle URLs - make them clickable with better styling
+  text = text.replace(
+    /(https?:\/\/[^\s<>]+)/g,
+    '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-600 underline break-all">$1</a>'
+  );
+
+  // Add proper spacing between sections
+  text = text.replace(/\n\n/g, "<br><br>");
+  text = text.replace(/\n/g, "<br>");
+
+  return text;
+};
+
 const Chat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
@@ -14,15 +49,25 @@ const Chat = () => {
   ]);
   const [inputValue, setInputValue] = useState("");
   const [loading, setIsLoading] = useState(false);
+  const [sessionId, setSessionId] = useState(null);
   const messagesEndRef = useRef(null);
 
+  // Generate session ID on component mount
+  useEffect(() => {
+    const newSessionId = `session_${Date.now()}_${Math.random()
+      .toString(36)
+      .slice(2, 11)}`;
+    setSessionId(newSessionId);
+    console.log("Generated session ID:", newSessionId);
+  }, []);
+
   const handleSendMessage = async () => {
-    if (!inputValue.trim()) return;
+    if (!inputValue.trim() || !sessionId) return;
 
     const userMessageText = inputValue.trim();
 
     console.log("User message text:", userMessageText);
-    console.log("Sending JSON:", JSON.stringify({ message: userMessageText }));
+    console.log("Session ID:", sessionId);
 
     const newUserMessage = {
       id: messages.length + 1,
@@ -43,7 +88,10 @@ const Chat = () => {
     setIsLoading(true);
 
     try {
-      const requestBody = { message: userMessageText };
+      const requestBody = {
+        message: userMessageText,
+        session_id: sessionId,
+      };
       console.log("Request body before stringify:", requestBody);
 
       const res = await fetch(`/api/chatbot`, {
@@ -103,7 +151,6 @@ const Chat = () => {
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && !loading) {
-      // Prevent sending if loading
       handleSendMessage();
     }
   };
@@ -112,27 +159,23 @@ const Chat = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // The renderMessageText function is no longer strictly needed in the Chat component
-  // because the MessageBubble component handles rendering based on message.loading
-  // const renderMessageText = (message) => {
-  //   return message.loading ? <LoadingAnimation /> : message.text;
-  // };
-
   return (
-    <div className="fixed bottom-6 right-6 z-50">
-      {/* Chat Window */}
+    <div className="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6">
+      {/* Chat Window - Responsive sizing */}
       <div
-        className={`absolute bottom-16 right-0 w-80 h-96 bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 transform transition-all duration-300 ease-out ${
+        className={`absolute bottom-16 right-0 w-[320px] h-[400px] sm:w-[380px] sm:h-[480px] md:w-[420px] md:h-[520px] lg:w-[450px] lg:h-[550px] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 transform transition-all duration-300 ease-out ${
           isOpen
             ? "scale-100 opacity-100 translate-y-0"
             : "scale-95 opacity-0 translate-y-4 pointer-events-none"
         }`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-orange-500 to-red-500 rounded-t-2xl">
+        <div className="flex items-center justify-between p-3 sm:p-4 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-orange-500 to-red-500 rounded-t-2xl">
           <div className="flex items-center space-x-3">
             <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-            <h3 className="text-white font-semibold">Chat Assistant</h3>
+            <h3 className="text-white font-semibold text-sm sm:text-base">
+              SamadAI
+            </h3>
           </div>
           <button
             onClick={() => setIsOpen(false)}
@@ -142,8 +185,8 @@ const Chat = () => {
           </button>
         </div>
 
-        {/* Messages */}
-        <div className="flex-1 p-4 h-64 overflow-y-auto space-y-3 bg-gray-50 dark:bg-gray-800 relative">
+        {/* Messages - Better spacing for larger screens */}
+        <div className="flex-1 p-3 sm:p-4 h-[280px] sm:h-[340px] md:h-[380px] lg:h-[410px] overflow-y-auto space-y-3 bg-gray-50 dark:bg-gray-800 relative">
           {messages.map((message) => (
             <MessageBubble key={message.id} message={message} />
           ))}
@@ -151,7 +194,7 @@ const Chat = () => {
         </div>
 
         {/* Input */}
-        <div className="p-4 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 rounded-b-2xl overflow-hidden">
+        <div className="p-3 sm:p-4 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 rounded-b-2xl overflow-hidden">
           <div className="flex space-x-2">
             <input
               type="text"
@@ -160,31 +203,31 @@ const Chat = () => {
               onKeyDown={handleKeyPress}
               placeholder="Type your message..."
               disabled={loading}
-              className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 disabled:opacity-50"
+              className="flex-1 px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 disabled:opacity-50"
             />
             <button
               onClick={handleSendMessage}
               disabled={loading || !inputValue.trim()}
               className="px-3 py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full hover:from-orange-600 hover:to-red-600 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
-              <SendHorizontal size={20} />
+              <SendHorizontal size={18} />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Floating Button */}
+      {/* Floating Button - Responsive sizing */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-14 h-14 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-orange-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-orange-300 dark:focus:ring-orange-800 ${
+        className={`w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-orange-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-orange-300 dark:focus:ring-orange-800 ${
           isOpen ? "rotate-180" : ""
         }`}
       >
         {isOpen ? (
-          <ArrowDown className="m-auto" size={25} />
+          <ArrowDown className="m-auto" size={20} />
         ) : (
           <div className="relative">
-            <MessageCircleMore className="m-auto" size={25} />
+            <MessageCircleMore className="m-auto" size={20} />
             {/* Notification dot */}
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
           </div>
@@ -194,7 +237,6 @@ const Chat = () => {
   );
 };
 
-// MessageBubble and LoadingAnimation remain the same
 const MessageBubble = ({ message }) => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -206,6 +248,10 @@ const MessageBubble = ({ message }) => {
     return () => clearTimeout(timer);
   }, []);
 
+  const parsedText = message.isBot
+    ? parseMessageText(message.text)
+    : message.text;
+
   return (
     <div
       className={`flex ${
@@ -215,15 +261,22 @@ const MessageBubble = ({ message }) => {
       }`}
     >
       <div
-        className={`max-w-xs px-4 py-2 rounded-2xl transition-all duration-300 ${
+        className={`max-w-[85%] sm:max-w-xs md:max-w-sm px-3 sm:px-4 py-3 rounded-2xl transition-all duration-300 ${
           message.isBot
             ? "bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 shadow-md"
             : "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg"
         }`}
       >
-        <p className="text-sm">
-          {message.loading ? <LoadingAnimation /> : message.text}
-        </p>
+        {message.loading ? (
+          <LoadingAnimation />
+        ) : message.isBot ? (
+          <div
+            className="text-xs sm:text-sm formatted-message leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: parsedText }}
+          />
+        ) : (
+          <p className="text-xs sm:text-sm leading-relaxed">{message.text}</p>
+        )}
       </div>
     </div>
   );
