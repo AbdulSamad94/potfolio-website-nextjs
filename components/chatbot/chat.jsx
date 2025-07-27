@@ -52,22 +52,12 @@ const Chat = () => {
   const [sessionId, setSessionId] = useState(null);
   const messagesEndRef = useRef(null);
 
-  // Generate session ID on component mount
-  useEffect(() => {
-    const newSessionId = `session_${Date.now()}_${Math.random()
-      .toString(36)
-      .slice(2, 11)}`;
-    setSessionId(newSessionId);
-    console.log("Generated session ID:", newSessionId);
-  }, []);
-
   const handleSendMessage = async () => {
-    if (!inputValue.trim() || !sessionId) return;
+    if (!inputValue.trim() || loading) return;
 
     const userMessageText = inputValue.trim();
-
     console.log("User message text:", userMessageText);
-    console.log("Session ID:", sessionId);
+    console.log("Current session ID:", sessionId);
 
     const newUserMessage = {
       id: messages.length + 1,
@@ -88,11 +78,13 @@ const Chat = () => {
     setIsLoading(true);
 
     try {
+      // Prepare request payload
       const requestBody = {
         message: userMessageText,
-        session_id: sessionId,
+        ...(sessionId && { session_id: sessionId }),
       };
-      console.log("Request body before stringify:", requestBody);
+
+      console.log("Sending request payload:", requestBody);
 
       const res = await fetch(`/api/chatbot`, {
         method: "POST",
@@ -103,7 +95,6 @@ const Chat = () => {
       });
 
       console.log("Response status:", res.status);
-      console.log("Response ok:", res.ok);
 
       if (!res.ok) {
         const errorData = await res.json();
@@ -115,7 +106,17 @@ const Chat = () => {
 
       const data = await res.json();
       console.log("Success response:", data);
-      const botResponseText = data.response;
+
+      // Update or set session_id from backend response
+      if (data.session_id) {
+        if (!sessionId) {
+          console.log("Setting new session ID:", data.session_id);
+          setSessionId(data.session_id);
+        } else if (sessionId !== data.session_id) {
+          console.log("Updating session ID:", data.session_id);
+          setSessionId(data.session_id);
+        }
+      }
 
       // Update messages: remove loading and add actual bot response
       setMessages((prev) => {
@@ -124,7 +125,7 @@ const Chat = () => {
           ...newMessages,
           {
             id: newMessages.length + 1,
-            text: botResponseText,
+            text: data.response,
             isBot: true,
             loading: false,
           },
@@ -150,20 +151,39 @@ const Chat = () => {
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter" && !loading) {
+    if (e.key === "Enter" && !e.shiftKey && !loading) {
+      e.preventDefault();
       handleSendMessage();
     }
+  };
+
+  // Clear session when chat is closed (optional)
+  const handleCloseChat = () => {
+    setIsOpen(false);
+    // Optionally clear session when closing chat
+    // setSessionId(null);
+    // setMessages([{
+    //   id: 1,
+    //   text: "Hey! I'm here to guide you through Abdul Samad's work. What would you like to see?",
+    //   isBot: true,
+    //   loading: false,
+    // }]);
   };
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  // Debug session ID changes
+  useEffect(() => {
+    console.log("Session ID updated:", sessionId);
+  }, [sessionId]);
+
   return (
     <div className="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6">
-      {/* Chat Window - Responsive sizing */}
+      {/* Chat Window */}
       <div
-        className={`absolute bottom-16 right-0 w-[320px] h-[400px] sm:w-[380px] sm:h-[480px] md:w-[420px] md:h-[520px] lg:w-[450px] lg:h-[550px] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 transform transition-all duration-300 ease-out ${
+        className={`absolute bottom-16 right-0 w-80 h-96 bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 transform transition-all duration-300 ease-out ${
           isOpen
             ? "scale-100 opacity-100 translate-y-0"
             : "scale-95 opacity-0 translate-y-4 pointer-events-none"
@@ -176,17 +196,23 @@ const Chat = () => {
             <h3 className="text-white font-semibold text-sm sm:text-base">
               SamadAI
             </h3>
+            {/* Debug: Show session status */}
+            {sessionId && (
+              <div className="text-xs text-white/70">
+                Session: {sessionId.slice(0, 8)}...
+              </div>
+            )}
           </div>
           <button
-            onClick={() => setIsOpen(false)}
+            onClick={handleCloseChat}
             className="text-white hover:text-gray-200 transition-colors"
           >
             <X size={20} />
           </button>
         </div>
 
-        {/* Messages - Better spacing for larger screens */}
-        <div className="flex-1 p-3 sm:p-4 h-[280px] sm:h-[340px] md:h-[380px] lg:h-[410px] overflow-y-auto space-y-3 bg-gray-50 dark:bg-gray-800 relative">
+        {/* Messages */}
+        <div className="flex-1 p-4 h-64 overflow-y-auto space-y-3 bg-gray-50 dark:bg-gray-800 relative">
           {messages.map((message) => (
             <MessageBubble key={message.id} message={message} />
           ))}
@@ -216,7 +242,7 @@ const Chat = () => {
         </div>
       </div>
 
-      {/* Floating Button - Responsive sizing */}
+      {/* Floating Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-orange-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-orange-300 dark:focus:ring-orange-800 ${
