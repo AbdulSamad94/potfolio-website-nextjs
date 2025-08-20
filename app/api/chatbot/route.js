@@ -21,9 +21,8 @@ export async function POST(request) {
       );
     }
 
-    // Force IPv4 connection - replace localhost with 127.0.0.1
-    const pythonBackendUrl = process.env.NEXT_PUBLIC_PYTHON_BACKEND_URL || "http://127.0.0.1:8000";
-    const backendEndpoint = `${pythonBackendUrl}/chat`.replace("localhost", "127.0.0.1");
+    const pythonBackendUrl = process.env.NEXT_PUBLIC_PYTHON_BACKEND_URL;
+    const backendEndpoint = `${pythonBackendUrl}/chat`
 
     console.log(`Forwarding message to Python backend: ${message}`);
     console.log(`Session ID: ${session_id || 'New session'}`);
@@ -36,7 +35,6 @@ export async function POST(request) {
 
     console.log("Request payload:", JSON.stringify(requestPayload));
 
-    // Add family: 4 to force IPv4 (Node.js specific)
     const backendResponse = await fetch(backendEndpoint, {
       method: "POST",
       headers: {
