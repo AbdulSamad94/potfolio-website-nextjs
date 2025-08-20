@@ -39,14 +39,22 @@ const parseMessageText = (text) => {
 
 const Chat = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      text: "Hey! I'm here to guide you through Abdul Samad's work. What would you like to see?",
-      isBot: true,
-      loading: false,
-    },
-  ]);
+  const [messages, setMessages] = useState(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("chat_history");
+      return saved
+        ? JSON.parse(saved)
+        : [
+            {
+              id: 1,
+              text: "Hey! I'm here to guide you through Abdul Samad's work. What would you like to see?",
+              isBot: true,
+              loading: false,
+            },
+          ];
+    }
+    return [];
+  });
   const [inputValue, setInputValue] = useState("");
   const [loading, setIsLoading] = useState(false);
   const [sessionId, setSessionId] = useState(null);
@@ -169,6 +177,10 @@ const Chat = () => {
     //   loading: false,
     // }]);
   };
+
+  useEffect(() => {
+    localStorage.setItem("chat_history", JSON.stringify(messages));
+  }, [messages]);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
