@@ -67,11 +67,6 @@ const Work = () => {
                 }}
                 spaceBetween={24}
                 centeredSlides={true}
-                loop={true}
-                autoplay={{
-                  delay: 4000,
-                  disableOnInteraction: false,
-                }}
                 modules={[Pagination, Autoplay]}
                 pagination={{
                   clickable: true,
