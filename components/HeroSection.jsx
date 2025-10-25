@@ -23,7 +23,7 @@ const HeroSection = () => {
         <div className="flex justify-between gap-x-8">
           <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center items xl:text-left">
             <h1 className="text-sm uppercase font-semibold mb-4 text-primary tracking-widest">
-              Full Stack Developer
+              Full Stack AI Agent Developer
             </h1>
             <h1 className="h1 mb-4">Hello, my name is Abdul Samad</h1>
             <p className="subtitle md:max-w-[500px] mx-auto xl:mx-0">

@@ -15,9 +15,9 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Abdul Samad Siddiqui | Full Stack Developer | React & Next.js Expert",
+  title: "Abdul Samad Siddiqui | Full Stack Developer | AI & Web Technologies Expert",
   description:
-    "Abdul Samad Siddiqui is a Full Stack Developer with expertise in React and Next.js. I am passionate about building scalable and user-friendly applications.",
+    "Abdul Samad Siddiqui is a skilled Full Stack Developer specializing in modern web technologies and AI development. Passionate about creating innovative, scalable solutions with Next.js, React, TypeScript, and cutting-edge AI tools.",
   icons: {
     icon: "/logo.png",
   },
