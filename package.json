@@ -22,7 +22,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.7.0",
     "lucide-react": "^0.446.0",
-    "next": "16.2.1",
+    "next": "16.2.4",
     "next-themes": "^0.3.0",
     "nodemailer": "^8.0.4",
     "react": "^18",
